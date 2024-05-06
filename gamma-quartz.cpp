@@ -197,7 +197,7 @@ redshift_set_temperature_for_display(redshift_state_t *state, int display,
 
 	if (state->preserve) {
 		/* Initialize gamma ramps from saved state */
-		::memory_copy(gamma_ramps, state->displays[display].saved_ramps,
+		::memcpy(gamma_ramps, state->displays[display].saved_ramps,
 		       3*ramp_size*sizeof(float));
 	} else {
 		/* Initialize gamma ramps to pure state */
