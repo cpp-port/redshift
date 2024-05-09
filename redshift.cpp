@@ -11,9 +11,9 @@
 #ifdef _WIN32
 
 
-#include "acme/_operating_system.h"
+//#include "acme/_operating_system.h"
 
-#include "redshift/gamma-w32gdi.h"
+#include "gamma-w32gdi.h"
 
 
 #elif defined(LINUX) || defined(FREEBSD) || defined(OPENBSD)
