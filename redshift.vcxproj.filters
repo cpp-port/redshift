@@ -10,12 +10,15 @@
     <Filter Include="Resource Files">
       <UniqueIdentifier>{60a77fa4-563e-486b-b40f-341fdeef08eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\include">
+      <UniqueIdentifier>{c96ccb3d-7c12-47aa-acd1-9a85f93879c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\redshift">
+      <UniqueIdentifier>{8dfc0eaa-e60d-4ed9-bd79-9514b51219bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="_.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="redshift.h">
@@ -29,6 +32,15 @@
     </ClInclude>
     <ClInclude Include="colorramp.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\redshift\_.h">
+      <Filter>Header Files\include\redshift</Filter>
+    </ClInclude>
+    <ClInclude Include="include\redshift\gamma.h">
+      <Filter>Header Files\include\redshift</Filter>
+    </ClInclude>
+    <ClInclude Include="include\redshift\redshift.h">
+      <Filter>Header Files\include\redshift</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
