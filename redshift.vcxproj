@@ -682,8 +682,10 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="gamma-w32gdi.h" />
     <ClInclude Include="gamma.h" />
+    <ClInclude Include="include\redshift\gamma.h" />
+    <ClInclude Include="include\redshift\redshift.h" />
+    <ClInclude Include="include\redshift\_.h" />
     <ClInclude Include="redshift.h" />
-    <ClInclude Include="_.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="deployment.rc" />

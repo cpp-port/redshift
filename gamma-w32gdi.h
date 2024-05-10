@@ -30,7 +30,7 @@
 
 
 
-#include "redshift.h"
+#include "redshift/redshift.h"
 
 
 typedef struct _REDSHIFT_STATE

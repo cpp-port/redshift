@@ -22,7 +22,7 @@
 
 #include <stdint.h>
 
-#include "redshift.h"
+#include "redshift/redshift.h"
 
 void colorramp_fill(unsigned short *gamma_r, unsigned short *gamma_g, unsigned short *gamma_b,
 		    int size, const color_setting_t *setting);

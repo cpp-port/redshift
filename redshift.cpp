@@ -30,6 +30,7 @@
 
 #endif
 
+#include "redshift/gamma.h"
 
 #include <stdlib.h>
 
