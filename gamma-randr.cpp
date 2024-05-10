@@ -46,7 +46,8 @@
 
 
 #include "gamma-randr.h"
-#include "redshift.h"
+#include "redshift/_.h"
+#include "redshift/redshift.h"
 #include "colorramp.h"
 
 

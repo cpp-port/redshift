@@ -29,7 +29,8 @@
 // Ubuntu : libxcb-randr0-dev
 #include <xcb/randr.h>
 
-#include "redshift.h"
+#include "redshift/_.h"
+#include "redshift/redshift.h"
 //#include "__standard_type.h"
 
 
