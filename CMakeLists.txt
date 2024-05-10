@@ -33,7 +33,9 @@ endif ()
 
 add_library(${PROJECT_NAME} SHARED ${library_source})
 add_library(static_${PROJECT_NAME} STATIC ${library_source})
-
+if(${LINUX})
+   target_compile_definitions(${PROJECT_NAME} PRIVATE LINUX)
+endif()
 
 #target_precompile_headers(${PROJECT_NAME} PRIVATE framework.h)
 #target_precompile_headers(static_${PROJECT_NAME} PRIVATE framework.h)
