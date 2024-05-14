@@ -306,6 +306,7 @@
 				);
 				USER_HEADER_SEARCH_PATHS = (
 					.,
+					include,
 					"$(WorkspaceDir)/source",
 					"$(WorkspaceDir)/source/include",
 					"$(WorkspaceDir)/source/app",

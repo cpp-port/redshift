@@ -24,7 +24,7 @@
 
 #include <ApplicationServices/ApplicationServices.h>
 
-#include "redshift.h"
+#include "redshift/redshift.h"
 
 typedef struct {
 	CGDirectDisplayID display;
@@ -38,7 +38,7 @@ typedef struct _REDSHIFT_STATE {
 	int preserve;
 } redshift_state_t;
 
-#include "gamma.h"
+#include "redshift/gamma.h"
 
 
 //int redshift_init(redshift_state_t *state);
