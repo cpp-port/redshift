@@ -166,7 +166,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					9AACE1FC2ACE32E900277B98 = {
 						CreatedOnToolsVersion = 15.0;
@@ -282,7 +282,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
+					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/$(CONFIGURATION)/library",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -294,7 +294,6 @@
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
@@ -401,7 +400,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/library",
+					"$(WorkspaceDir)/../operating_system/storage-$(PLATFORM_MODIFIER)/$(CONFIGURATION)/library",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -412,7 +411,6 @@
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
