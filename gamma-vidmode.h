@@ -32,7 +32,7 @@ typedef struct {
 	int preserve;
 	int screen_num;
 	int ramp_size;
-	u16 *saved_ramps;
+	unsigned short *saved_ramps;
 } vidmode_state_t;
 
 
