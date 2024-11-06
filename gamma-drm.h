@@ -32,9 +32,9 @@ typedef struct {
 	int crtc_num;
 	int crtc_id;
 	int gamma_size;
-	u16* r_gamma;
-	u16* g_gamma;
-	u16* b_gamma;
+	unsigned short* r_gamma;
+	unsigned short* g_gamma;
+	unsigned short* b_gamma;
 } drm_crtc_state_t;
 
 typedef struct {
