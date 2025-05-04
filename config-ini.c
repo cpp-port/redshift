@@ -123,7 +123,7 @@ open_config_file(const char *filepath)
 	} else {
 		f = fopen(filepath, "r");
 		if (f == NULL) {
-			perror("fopen");
+			fprintf(stderr, "fopen");
 			return NULL;
 		}
 	}

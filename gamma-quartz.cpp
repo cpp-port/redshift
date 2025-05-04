@@ -64,7 +64,7 @@ redshift_start(redshift_state_t *state)
 	CGDirectDisplayID* displays =(CGDirectDisplayID* )
 		malloc(sizeof(CGDirectDisplayID)*display_count);
 	if (displays == nullptr) {
-		perror("malloc");
+		fprintf(stderr, "malloc");
 		return -1;
 	}
 
@@ -80,7 +80,7 @@ redshift_start(redshift_state_t *state)
 	state->displays = (redshift_display_state_t *)malloc(display_count *
 				 sizeof(redshift_display_state_t));
 	if (state->displays == nullptr) {
-		perror("malloc");
+		fprintf(stderr, "malloc");
 		free(displays);
 		return -1;
 	}
@@ -110,7 +110,7 @@ redshift_start(redshift_state_t *state)
 		state->displays[i].saved_ramps =
 			(float *) malloc(3 * ramp_size * sizeof(float));
 		if (state->displays[i].saved_ramps == nullptr) {
-			perror("malloc");
+			fprintf(stderr, "malloc");
 			return -1;
 		}
 
@@ -187,7 +187,7 @@ redshift_set_temperature_for_display(redshift_state_t *state, int display,
 	/* Create new gamma ramps */
 	float *gamma_ramps = (float *) malloc(3*ramp_size*sizeof(float));
 	if (gamma_ramps == nullptr) {
-		perror("malloc");
+		fprintf(stderr, "malloc");
 		return;
 	}
 

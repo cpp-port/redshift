@@ -69,13 +69,13 @@ signals_install_handlers(void)
 
 	r = sigaction(SIGINT, &sigact, NULL);
 	if (r < 0) {
-		perror("sigaction");
+		fprintf(stderr, "sigaction");
 		return -1;
 	}
 
 	r = sigaction(SIGTERM, &sigact, NULL);
 	if (r < 0) {
-		perror("sigaction");
+		fprintf(stderr, "sigaction");
 		return -1;
 	}
 
@@ -86,7 +86,7 @@ signals_install_handlers(void)
 
 	r = sigaction(SIGUSR1, &sigact, NULL);
 	if (r < 0) {
-		perror("sigaction");
+		fprintf(stderr, "sigaction");
 		return -1;
 	}
 
@@ -95,10 +95,12 @@ signals_install_handlers(void)
 	sigact.sa_handler = SIG_IGN;
 	sigact.sa_mask = sigset;
 	sigact.sa_flags = 0;
-
+fprintf(stderr, "Going to ignore SIGCHLD");
+fflush(stderr);
+sleep(5);
 	r = sigaction(SIGCHLD, &sigact, NULL);
 	if (r < 0) {
-		perror("sigaction");
+		fprintf(stderr, "sigaction");
 		return -1;
 	}
 #endif /* HAVE_SIGNAL_H && ! __WIN32__ */

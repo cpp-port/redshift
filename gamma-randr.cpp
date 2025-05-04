@@ -149,7 +149,7 @@ redshift_start(redshift_state_t *state)
 	state->crtc_count = res_reply->num_crtcs;
 	state->crtcs = (redshift_crtc_state_t *)calloc(state->crtc_count, sizeof(redshift_crtc_state_t));
 	if (state->crtcs == nullptr) {
-		perror("malloc");
+		fprintf(stderr, "malloc");
 		state->crtc_count = 0;
 		return -1;
 	}
@@ -221,7 +221,7 @@ redshift_start(redshift_state_t *state)
 		state->crtcs[i].saved_ramps =(unsigned short *)
 			malloc(3*ramp_size*sizeof(unsigned short));
 		if (state->crtcs[i].saved_ramps == nullptr) {
-			perror("malloc");
+			fprintf(stderr, "malloc");
 			free(gamma_get_reply);
 			return -1;
 		}
@@ -340,7 +340,7 @@ redshift_set_temperature_for_crtc(redshift_state_t *state, int crtc_num,
 	/* Create new gamma ramps */
 	unsigned short *gamma_ramps = (unsigned short *)malloc(3*ramp_size*sizeof(unsigned short));
 	if (gamma_ramps == nullptr) {
-		perror("malloc");
+		fprintf(stderr, "malloc");
 		return -1;
 	}
 

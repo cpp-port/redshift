@@ -161,7 +161,7 @@ location_geoclue_set_option(location_geoclue_state_t *state,
 
 		state->provider = strdup(provider);
 		if (state->provider == NULL) {
-			perror("strdup");
+			fprintf(stderr, "strdup");
 			return -1;
 		}
 	} else if (strcasecmp(key, "path") == 0) {
@@ -173,7 +173,7 @@ location_geoclue_set_option(location_geoclue_state_t *state,
 
 		state->provider_path = strdup(path);
 		if (state->provider_path == NULL) {
-			perror("strdup");
+			fprintf(stderr, "strdup");
 			return -1;
 		}
 	} else {

@@ -92,7 +92,7 @@ vidmode_start(vidmode_state_t *state)
 	/* Allocate space for saved gamma ramps */
 	state->saved_ramps = malloc(3*state->ramp_size*sizeof(u16));
 	if (state->saved_ramps == NULL) {
-		perror("malloc");
+		fprintf(stderr, "malloc");
 		return -1;
 	}
 
@@ -179,7 +179,7 @@ vidmode_set_temperature(vidmode_state_t *state,
 	/* Create new gamma ramps */
 	u16 *gamma_ramps = malloc(3*state->ramp_size*sizeof(u16));
 	if (gamma_ramps == NULL) {
-		perror("malloc");
+		fprintf(stderr, "malloc");
 		return -1;
 	}
 

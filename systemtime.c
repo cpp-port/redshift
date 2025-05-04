@@ -51,7 +51,7 @@ systemtime_get_time(double *t)
 	struct timespec now;
 	int r = clock_gettime(CLOCK_REALTIME, &now);
 	if (r < 0) {
-		perror("clock_gettime");
+		fprintf(stderr, "clock_gettime");
 		return -1;
 	}
 
@@ -60,7 +60,7 @@ systemtime_get_time(double *t)
 	struct timeval now;
 	int r = gettimeofday(&now, NULL);
 	if (r < 0) {
-		perror("gettimeofday");
+		fprintf(stderr, "gettimeofday");
 		return -1;
 	}
 

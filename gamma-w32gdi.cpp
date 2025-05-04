@@ -79,7 +79,7 @@ redshift_start(redshift_state_t *state)
    state->saved_ramps = (::uint16_t *) malloc(3*GAMMA_RAMP_SIZE*sizeof(::uint16_t));
    if (state->saved_ramps == nullptr)
    {
-      perror("malloc");
+      fprintf(stderr, "malloc");
       ReleaseDC(nullptr, hDC);
       return -1;
    }
@@ -173,7 +173,7 @@ redshift_set_temperature(redshift_state_t *state,
    ::uint16_t *gamma_ramps = (::uint16_t *) malloc(3*GAMMA_RAMP_SIZE*sizeof(::uint16_t));
    if (gamma_ramps == nullptr)
    {
-      perror("malloc");
+      fprintf(stderr, "malloc");
       ReleaseDC(nullptr, hDC);
       return -1;
    }

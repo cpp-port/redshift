@@ -68,7 +68,7 @@ drm_start(drm_state_t *state)
 	if (state->fd < 0) {
 		/* TODO check if access permissions, normally root or
 		        membership of the video group is required. */
-		perror("open");
+		fprintf(stderr, "open");
 		return -1;
 	}
 
@@ -155,7 +155,7 @@ drm_start(drm_state_t *state)
 				crtcs->r_gamma = NULL;
 			}
 		} else {
-			perror("malloc");
+			fprintf(stderr, "malloc");
 			drmModeFreeResources(state->res);
 			state->res = NULL;
 			close(state->fd);
@@ -262,7 +262,7 @@ drm_set_temperature(drm_state_t *state, const color_setting_t *setting)
 				b_gamma = g_gamma + crtcs->gamma_size;
 			}
 			if (r_gamma == NULL) {
-				perror(last_gamma_size == 0 ? "malloc" : "realloc");
+				fprintf(stderr, last_gamma_size == 0 ? "malloc" : "realloc");
 				return -1;
 			}
 			last_gamma_size = crtcs->gamma_size;

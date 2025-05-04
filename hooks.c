@@ -94,7 +94,7 @@ hooks_signal_period_change(period_t prev_period, period_t period)
 		   output. */
 		pid_t pid = fork();
 		if (pid == (pid_t)-1) {
-			perror("fork");
+			fprintf(stderr, "fork");
 			continue;
 		} else if (pid == 0) { /* Child */
 			close(STDOUT_FILENO);
