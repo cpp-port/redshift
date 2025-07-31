@@ -68,7 +68,7 @@ elseif(${LINUX} OR ${__BSD__})
 
 
 
-   pkg_check_modules(PKGCONFIG xcb xcb-randr)
+   pkg_check_modules(${PROJECT_NAME}_PKGCONFIG xcb xcb-randr)
 
    target_compile_options(${PROJECT_NAME} PRIVATE -fpermissive ${PKGCONFIG_CFLAGS})
    target_compile_options(static_${PROJECT_NAME} PRIVATE -fpermissive ${PKGCONFIG_CFLAGS})
