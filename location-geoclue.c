@@ -65,7 +65,7 @@ location_geoclue_start(location_geoclue_state_t *state)
 			/* TODO This (hack) should be erased when GeoClue has been patched. */
 			putenv("DISPLAY=:0");
 		}
-                GError *error = NULL;
+                GError * pgerror = NULL;
                 GeoclueMaster *master = geoclue_master_get_default();
                 GeoclueMasterClient *client = geoclue_master_create_client(master,
                                                                            NULL, &error);
@@ -189,7 +189,7 @@ location_geoclue_get_location(location_geoclue_state_t *state,
 			      location_t *location)
 {
 	GeocluePositionFields fields;
-	GError *error = NULL;
+	GError * pgerror = NULL;
 	double latitude = 0, longitude = 0;
 
 	fields = geoclue_position_get_position(state->position, NULL,

@@ -101,7 +101,7 @@ geoclue_client_signal_cb(GDBusProxy *client, gchar *sender_name,
 	g_variant_get_child(parameters, 1, "&o", &location_path);
 
 	/* Obtain location */
-	GError *error = NULL;
+	GError * pgerror = NULL;
 	GDBusProxy *location =
 		g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SYSTEM,
 					      G_DBUS_PROXY_FLAGS_NONE,
@@ -140,7 +140,7 @@ on_name_appeared(GDBusConnection *conn, const gchar *name,
 	get_location_data_t *data = (get_location_data_t *)user_data;
 
 	/* Obtain GeoClue Manager */
-	GError *error = NULL;
+	GError * pgerror = NULL;
 	GDBusProxy *geoclue_manager =
 		g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SYSTEM,
 					      G_DBUS_PROXY_FLAGS_NONE,
