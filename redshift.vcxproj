@@ -1242,6 +1242,9 @@
   <ItemGroup>
     <ResourceCompile Include="deployment.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="redshift.def" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
