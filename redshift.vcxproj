@@ -430,6 +430,9 @@
     <Xdcmake>
       <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
     </Xdcmake>
+    <PreBuildEvent>
+      <Command> </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|Win32'">
     <PreBuildEvent />
@@ -633,6 +636,9 @@
     <Xdcmake>
       <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
     </Xdcmake>
+    <PreBuildEvent>
+      <Command> </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PreBuildEvent />
@@ -803,6 +809,9 @@
     </CustomBuildStep>
     <CustomBuildStep />
     <CustomBuildStep />
+    <PreBuildEvent>
+      <Command> </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|ARM64'">
     <PreBuildEvent />
@@ -861,6 +870,9 @@
     </CustomBuildStep>
     <CustomBuildStep />
     <CustomBuildStep />
+    <PreBuildEvent>
+      <Command> </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|x64'">
     <PreBuildEvent />
@@ -1158,6 +1170,9 @@
     </CustomBuildStep>
     <CustomBuildStep />
     <CustomBuildStep />
+    <PreBuildEvent>
+      <Command> </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|ARM64'">
     <PreBuildEvent />
@@ -1222,6 +1237,9 @@
     </CustomBuildStep>
     <CustomBuildStep />
     <CustomBuildStep />
+    <PreBuildEvent>
+      <Command> </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="colorramp.cpp" />
