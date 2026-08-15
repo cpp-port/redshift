@@ -5,7 +5,7 @@
 //  Created by Camilo Sasuke on 2021-06-21 19:11 BRT <3ThomasBS_!!
 //  Copyright (c) 2021 Camilo Sasuke Thomas Borregaard Soerensen. All rights reserved.
 //
-#include "framework.h"
+#include "platform.h"
 
 
 #ifdef _WIN32

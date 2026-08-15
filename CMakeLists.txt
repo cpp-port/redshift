@@ -37,13 +37,13 @@ if(${LINUX})
    target_compile_definitions(${PROJECT_NAME} PRIVATE LINUX)
 endif()
 
-#target_precompile_headers(${PROJECT_NAME} PRIVATE framework.h)
-#target_precompile_headers(static_${PROJECT_NAME} PRIVATE framework.h)
+#target_precompile_headers(${PROJECT_NAME} PRIVATE platform.h)
+#target_precompile_headers(static_${PROJECT_NAME} PRIVATE platform.h)
 
 #if (NOT ${NO_PRECOMPILED_HEADER})
 #
-#   target_precompile_headers(${PROJECT_NAME} PRIVATE framework.h)
-#   target_precompile_headers(static_${PROJECT_NAME} PRIVATE framework.h)
+#   target_precompile_headers(${PROJECT_NAME} PRIVATE platform.h)
+#   target_precompile_headers(static_${PROJECT_NAME} PRIVATE platform.h)
 #
 #endif ()
 

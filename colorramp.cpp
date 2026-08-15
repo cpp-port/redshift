@@ -17,7 +17,7 @@
    Copyright (c) 2013-2014  Jon Lund Steffensen <jonlst@gmail.com>
    Copyright (c) 2013  Ingo Thies <ithies@astro.uni-bonn.de>
 */
-#include "framework.h"
+#include "platform.h"
 
 #include <stdint.h>
 #include <math.h>

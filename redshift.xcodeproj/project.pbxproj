@@ -19,7 +19,7 @@
 		9AACE2652ACE338A00277B98 /* gamma.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AACE2372ACE338A00277B98 /* gamma.h */; };
 		9AACE2662ACE338A00277B98 /* solar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AACE2382ACE338A00277B98 /* solar.h */; };
 		9AACE2672ACE338A00277B98 /* gamma-vidmode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AACE2392ACE338A00277B98 /* gamma-vidmode.h */; };
-		9AACE2682ACE338A00277B98 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AACE23A2ACE338A00277B98 /* framework.h */; };
+		9AACE2682ACE338A00277B98 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AACE23A2ACE338A00277B98 /* platform.h */; };
 		9AACE2692ACE338A00277B98 /* redshift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AACE23B2ACE338A00277B98 /* redshift.cpp */; };
 		9AACE26C2ACE338A00277B98 /* systemtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AACE2402ACE338A00277B98 /* systemtime.h */; };
 		9AACE26F2ACE338A00277B98 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AACE2462ACE338A00277B98 /* _.h */; };
@@ -43,7 +43,7 @@
 		9AACE2372ACE338A00277B98 /* gamma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gamma.h; sourceTree = "<group>"; };
 		9AACE2382ACE338A00277B98 /* solar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = solar.h; sourceTree = "<group>"; };
 		9AACE2392ACE338A00277B98 /* gamma-vidmode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "gamma-vidmode.h"; sourceTree = "<group>"; };
-		9AACE23A2ACE338A00277B98 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
+		9AACE23A2ACE338A00277B98 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
 		9AACE23B2ACE338A00277B98 /* redshift.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = redshift.cpp; sourceTree = "<group>"; };
 		9AACE2402ACE338A00277B98 /* systemtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = systemtime.h; sourceTree = "<group>"; };
 		9AACE2462ACE338A00277B98 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				9AACE2372ACE338A00277B98 /* gamma.h */,
 				9AACE2382ACE338A00277B98 /* solar.h */,
 				9AACE2392ACE338A00277B98 /* gamma-vidmode.h */,
-				9AACE23A2ACE338A00277B98 /* framework.h */,
+				9AACE23A2ACE338A00277B98 /* platform.h */,
 				9AACE23B2ACE338A00277B98 /* redshift.cpp */,
 				9AACE2402ACE338A00277B98 /* systemtime.h */,
 				9AACE2462ACE338A00277B98 /* _.h */,
@@ -127,7 +127,7 @@
 				9AACE2652ACE338A00277B98 /* gamma.h in Headers */,
 				9AACE25C2ACE338A00277B98 /* gamma-quartz.h in Headers */,
 				9AACE2642ACE338A00277B98 /* gamma-dummy.h in Headers */,
-				9AACE2682ACE338A00277B98 /* framework.h in Headers */,
+				9AACE2682ACE338A00277B98 /* platform.h in Headers */,
 				9AACE26C2ACE338A00277B98 /* systemtime.h in Headers */,
 				9AACE2602ACE338A00277B98 /* location-manual.h in Headers */,
 				9AACE2672ACE338A00277B98 /* gamma-vidmode.h in Headers */,
@@ -291,7 +291,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = framework.h;
+				GCC_PREFIX_HEADER = platform.h;
 				GCC_PREPROCESSOR_DEFINITIONS = _DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = "";
@@ -409,7 +409,7 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = framework.h;
+				GCC_PREFIX_HEADER = platform.h;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;

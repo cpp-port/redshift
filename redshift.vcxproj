@@ -1479,7 +1479,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colorramp.h" />
-    <ClInclude Include="framework.h" />
+    <ClInclude Include="platform.h" />
     <ClInclude Include="gamma-w32gdi.h" />
     <ClInclude Include="gamma.h" />
     <ClInclude Include="include\redshift\gamma.h" />
