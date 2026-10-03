@@ -22,7 +22,7 @@ if (WIN32)
 
 endif ()
 
-if(${LINUX} OR ${__BSD__})
+if(LINUX OR __BSD__ OR CMAKE_SYSTEM_NAME STREQUAL "SunOS")
 
    list(APPEND library_source
       gamma-randr.cpp
@@ -33,6 +33,10 @@ endif ()
 
 add_library(${PROJECT_NAME} SHARED ${library_source})
 add_library(static_${PROJECT_NAME} STATIC ${library_source})
+if(CMAKE_SYSTEM_NAME STREQUAL "SunOS")
+   target_compile_definitions(${PROJECT_NAME} PRIVATE __SUNOS__)
+   target_compile_definitions(static_${PROJECT_NAME} PRIVATE __SUNOS__)
+endif()
 if(${LINUX})
    target_compile_definitions(${PROJECT_NAME} PRIVATE LINUX)
 endif()
@@ -59,7 +63,7 @@ if(${WIN32})
    target_link_options(${PROJECT_NAME} PRIVATE "/SUBSYSTEM:WINDOWS")
    target_link_libraries(${PROJECT_NAME} PRIVATE ${library_references})
    target_link_libraries(${PROJECT_NAME} PRIVATE ws2_32 winmm shlwapi)
-elseif(${LINUX} OR ${__BSD__})
+elseif(LINUX OR __BSD__ OR CMAKE_SYSTEM_NAME STREQUAL "SunOS")
 
    target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
    #set_target_properties(${PROJECT_NAME} PROPERTIES CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
