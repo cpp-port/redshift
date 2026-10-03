@@ -16,7 +16,7 @@
 #include "gamma-w32gdi.h"
 
 
-#elif defined(LINUX) || defined(FREEBSD) || defined(OPENBSD)
+#elif defined(LINUX) || defined(FREEBSD) || defined(OPENBSD) || defined(__SUNOS__)
 
 
 #include "redshift/gamma-randr.h"
