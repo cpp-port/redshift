@@ -47,6 +47,7 @@
 int
 redshift_init(redshift_state_t *state)
 {
+   state->supported = 0;
    state->saved_ramps = nullptr;
    state->preserve = 0;
 
@@ -56,6 +57,7 @@ redshift_init(redshift_state_t *state)
 int
 redshift_start(redshift_state_t *state)
 {
+   state->supported = 0;
    BOOL r;
 
    /* Open device context */
@@ -96,12 +98,14 @@ redshift_start(redshift_state_t *state)
    /* Release device context */
    ReleaseDC(nullptr, hDC);
 
+   state->supported = 1;
    return 0;
 }
 
 void
 redshift_free(redshift_state_t *state)
 {
+   state->supported = 0;
    /* Free saved ramps */
    free(state->saved_ramps);
 }

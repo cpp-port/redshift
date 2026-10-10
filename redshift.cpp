@@ -22,10 +22,16 @@
 #include "redshift/gamma-randr.h"
 
 
-#else
+#elif defined(MACOS)
 
 
 #include "redshift/gamma-quartz.h"
+
+
+#else
+
+
+#include "gamma-unsupported.h"
 
 
 #endif
@@ -38,7 +44,7 @@
 redshift_state_t * redshift_alloc()
 {
 
-   return (redshift_state_t * )malloc(sizeof(redshift_state_t));
+   return (redshift_state_t * )calloc(1, sizeof(redshift_state_t));
 
 }
 
@@ -48,6 +54,20 @@ void redshift_destroy(redshift_state_t *p)
 
    free(p);
 
+}
+
+int redshift_is_supported(const redshift_state_t *state)
+{
+   return state && state->supported ? 1 : 0;
+}
+
+int redshift_is_supported()
+{
+#if defined(_WIN32) || defined(LINUX) || defined(FREEBSD) || defined(OPENBSD) || defined(__SUNOS__) || defined(MACOS)
+   return 1;
+#else
+   return 0;
+#endif
 }
 
 

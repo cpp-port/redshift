@@ -42,6 +42,7 @@
 int
 redshift_init(redshift_state_t *state)
 {
+   state->supported = 0;
 	state->preserve = 0;
 	state->displays = nullptr;
 
@@ -51,6 +52,7 @@ redshift_init(redshift_state_t *state)
 int
 redshift_start(redshift_state_t *state)
 {
+   state->supported = 0;
 	//int r;
 	CGError error;
 	uint32_t display_count;
@@ -131,6 +133,7 @@ redshift_start(redshift_state_t *state)
 		}
 	}
 
+   state->supported = state->display_count > 0;
 	return 0;
 }
 
@@ -143,6 +146,7 @@ redshift_restore(redshift_state_t *state)
 void
 redshift_free(redshift_state_t *state)
 {
+   state->supported = 0;
 	if (state->displays != nullptr) {
 		for (int i = 0; i < state->display_count; i++) {
 			free(state->displays[i].saved_ramps);
@@ -152,17 +156,12 @@ redshift_free(redshift_state_t *state)
 }
 
 void
-redshift_print_help(FILE *f)
+redshift_print_help(char *buffer, int capacity)
 {
-	fputs(_("Adjust gamma ramps on OSX using Quartz.\n"), f);
-	fputs("\n", f);
-
-	/* TRANSLATORS: Quartz help output
-	   left column must not be translated */
-	fputs(_("  preserve={0,1}\tWhether existing gamma should be"
-		" preserved\n"),
-	      f);
-	fputs("\n", f);
+	if (buffer && capacity > 0)
+		snprintf(buffer, capacity,
+			_("Adjust gamma ramps on OSX using Quartz.\n\n"
+			  "  preserve={0,1}\tWhether existing gamma should be preserved\n\n"));
 }
 
 int

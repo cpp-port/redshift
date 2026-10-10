@@ -49,6 +49,7 @@ typedef struct _REDSHIFT_STATE {
 	int crtc_num;
 	unsigned int crtc_count;
 	redshift_crtc_state_t *crtcs;
+   int supported;
 } redshift_state_t;
 
 

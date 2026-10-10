@@ -36,6 +36,7 @@ typedef struct _REDSHIFT_STATE {
 	redshift_display_state_t *displays;
 	uint32_t display_count;
 	int preserve;
+   int supported;
 } redshift_state_t;
 
 #include "redshift/gamma.h"

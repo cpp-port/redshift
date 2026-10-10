@@ -58,6 +58,7 @@
 int
 redshift_init(redshift_state_t *state)
 {
+   state->supported = 0;
 	/* Initialize state. */
 	state->screen_num = -1;
 	state->crtc_num = -1;
@@ -86,6 +87,7 @@ redshift_init(redshift_state_t *state)
 		fprintf(stderr, _("`%s' returned error %d\n"),
 			"redshift Query Version", ec);
 		xcb_disconnect(state->conn);
+		state->conn = nullptr;
 		return -1;
 	}
 
@@ -95,6 +97,7 @@ redshift_init(redshift_state_t *state)
 			ver_reply->major_version, ver_reply->minor_version);
 		free(ver_reply);
 		xcb_disconnect(state->conn);
+		state->conn = nullptr;
 		return -1;
 	}
 
@@ -106,6 +109,7 @@ redshift_init(redshift_state_t *state)
 int
 redshift_start(redshift_state_t *state)
 {
+   state->supported = 0;
 	xcb_generic_error_t *error;
 
 	int screen_num = state->screen_num;
@@ -237,6 +241,7 @@ redshift_start(redshift_state_t *state)
 		free(gamma_get_reply);
 	}
 
+   state->supported = state->crtc_count > 0;
 	return 0;
 }
 
@@ -272,6 +277,7 @@ redshift_restore(redshift_state_t *state)
 void
 redshift_free(redshift_state_t *state)
 {
+   state->supported = 0;
 	/* Free CRTC state */
 	for (int i = 0; i < state->crtc_count; i++) {
 		free(state->crtcs[i].saved_ramps);
@@ -279,7 +285,7 @@ redshift_free(redshift_state_t *state)
 	free(state->crtcs);
 
 	/* Close connection */
-	xcb_disconnect(state->conn);
+	if (state->conn) xcb_disconnect(state->conn);
 }
 
 void

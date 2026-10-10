@@ -37,6 +37,7 @@ typedef struct _REDSHIFT_STATE
 {
    ::uint16_t *saved_ramps;
    int preserve;
+   int supported;
 } redshift_state_t;
 
 //#include "gamma.h"

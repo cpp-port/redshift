@@ -20,19 +20,32 @@ if (WIN32)
       gamma-w32gdi.cpp
       )
 
-endif ()
-
-if(LINUX OR __BSD__ OR CMAKE_SYSTEM_NAME STREQUAL "SunOS")
+elseif(LINUX OR __BSD__ OR CMAKE_SYSTEM_NAME STREQUAL "SunOS")
 
    list(APPEND library_source
       gamma-randr.cpp
       )
+
+elseif(MACOS OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+
+   list(APPEND library_source gamma-quartz.cpp)
+
+else()
+
+   list(APPEND library_source gamma-unsupported.cpp)
 
 endif ()
 
 
 add_library(${PROJECT_NAME} SHARED ${library_source})
 add_library(static_${PROJECT_NAME} STATIC ${library_source})
+if(MACOS OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+   target_compile_definitions(${PROJECT_NAME} PRIVATE MACOS)
+   target_compile_definitions(static_${PROJECT_NAME} PRIVATE MACOS)
+   find_library(REDSHIFT_APPLICATION_SERVICES ApplicationServices REQUIRED)
+   target_link_libraries(${PROJECT_NAME} PRIVATE ${REDSHIFT_APPLICATION_SERVICES})
+   target_link_libraries(static_${PROJECT_NAME} PRIVATE ${REDSHIFT_APPLICATION_SERVICES})
+endif()
 if(CMAKE_SYSTEM_NAME STREQUAL "SunOS")
    target_compile_definitions(${PROJECT_NAME} PRIVATE __SUNOS__)
    target_compile_definitions(static_${PROJECT_NAME} PRIVATE __SUNOS__)
@@ -99,6 +112,9 @@ list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/../../../ope
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${library_include_directories})
 target_include_directories(static_${PROJECT_NAME} PRIVATE ${library_include_directories})
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(static_${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
